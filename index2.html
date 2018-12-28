@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regular expressions excercises</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+</head>
+<body>
+    <!-- ==================================================== -->
+<!-- menu nav -->
+<nav>
+        <div class="logo">
+            <a href="./index.html">
+                <h1>/regexcercises/</h1>
+            </a>
+        </div>
+        <div class="rightNav">
+            <!-- <div class="selectLanguage">
+                <select  id="languages">
+                    <option value="" disabled selected>Language</option>
+                    <option value="english">English</option>
+                    <option value="spanish">Español</option>
+                </select>
+            </div> -->
+            <div><a href="./links.html#learn">Learn Regex</a></div>
+            <div><a href="./links.html#about">about</a></div>
+        </div>
+    </nav>
+    <!-- ==================================================== -->
+
+    <div class="descriptionContainer">
+        <div id="description">
+            <div class="description1 active" id="description1">
+                Hi!, write a regular expression to match all words in the left collum(positive) but nothing to the right collum(negative) 
+            </div>
+            <div class="description2" id="description2">
+                ok, this level is a little different, write a regular expression to match all words without the "e" letter
+            </div>
+        </div>
+    </div>
+
+    <div class="inputContainer">
+        <input type="text" id="re" autocomplete="off" placeholder="enter the regex here">
+        <button onclick="look()">let's go!</button>
+    </div>
+
+    <p id="numberLevel">level 1</p>
+    <!-- ==================================================== -->
+
+    <section class="principalWords">
+        <div class="containerWords">
+            <!-- left -->
+            <div class="left">
+                <h2>Positives</h2>
+                <div id="positives">
+                    <!-- here the words by javascript -->
+                </div>
+            </div>
+            <!-- right -->
+            <div class="right">
+                <h2>Negatives</h2>
+                <div id="negatives">
+                    <!-- here the words by javascript -->
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ==================================================== -->
+
+    <div class="buttonsContainer">
+        <h2>Levels</h2>
+        <div class="buttons">
+            <button onclick="previous()">previous</button>
+            <button onclick="next()">next</button>
+        </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- modal buttons to show a modal tips and help window -->
+    <div class="modals">
+        <div class="help" onclick="addCssClass(0)">
+            <p><b>help</b></p>
+            <img src="./img/help.png" alt="regex_help" title="help">
+        </div>
+        <div class="clue" onclick="addCssClass(1)">
+            <p><b>clue</b></p>
+            <img src="./img/lupa.png" alt="solution_regex" title="solution" >
+        </div>
+    </div>
+
+    <!-- modal container -->
+    <!-- modal to help -->
+    <section class="modalContainer1" id="modalContainer1">
+        <div class="modalContent">
+            <div class="quit" onclick="quit()">quit X</div>
+            <div class="modalTitle"><h1>this is a guide for commons regular expressions</h1></div>
+            <div class="modalInfo">
+                <!-- table of eloquent javascript online free book -->
+                    <table>
+
+                    <tbody><tr><td><code>/abc/</code></td><td>A sequence of characters</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/[abc]/</code></td><td>Any character from a set of characters</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/[^abc]/</code></td><td>Any character <em>not</em> in a set of characters</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/[0-9]/</code></td><td>Any character in a range of characters</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/x+/</code></td><td>One or more occurrences of the pattern <code>x</code></td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/x+?/</code></td><td>One or more occurrences, nongreedy</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/x*/</code></td><td>Zero or more occurrences</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/x?/</code></td><td>Zero or one occurrence</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/x{2,4}/</code></td><td>Two to four occurrences</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/(abc)/</code></td><td>A group</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/a|b|c/</code></td><td>Any one of several patterns</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/\d/</code></td><td>Any digit character</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/\w/</code></td><td>An alphanumeric character (“word character”)</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/\s/</code></td><td>Any whitespace character</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/./</code></td><td>Any character except newlines</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/\b/</code></td><td>A word boundary</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/^/</code></td><td>Start of input</td>
+                    
+                    </tr>
+                    
+                    <tr><td><code>/$/</code></td><td>End of input</td>
+                    
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal to solution clue -->
+    <section class="modalContainer2" id="modalContainer2">
+            <div class="modalContent">
+                    <div class="quit" onclick="quit()">quit X</div>
+                    <!-- solutions -->
+                    <div class="modalTitle"><h1>some solutions for the exercise</h1></div>
+                    <!-- enter via js the solutions depends the level -->
+                    <div id="solutions"></div>
+            </div>
+        </section>
+
+            <!-- ==================================================== -->
+
+    <!-- div for space the footer at least 1px of height, this is for the body css -->
+    <div class="espaciado"></div>
+    <footer>
+        <a href="./links.html">about</a>
+        <div>|</div>
+        <a href="#">let me a star!</a>
+        <a href="#"><img src="./img/githubLogo.png" alt="github-Regex"></a>
+        <div>|</div>
+        <a href="#">my projects</a>
+    </footer>
+
+    <!-- scripts -->
+    <script src="./code/dist/words.js"></script>
+    <script src="./code/dist/index2.js"></script>   
+    <script src="./code/dist/translation.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "regexp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./index2.js -d lib"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-cli": "^6.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0"
+  },
+  "author": "me",
+  "license": "MIT"
+}
