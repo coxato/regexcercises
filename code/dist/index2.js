@@ -232,7 +232,7 @@ function solutions() {
   // levels solutions in order
   var solves = [['ferr(et|y|ari)', 'ferr.*(t|y|i)$'], // level 1
   ['\\b[^eE]+\\b'], // level 2
-  ['\\w*p(\\wte?|\\s)(two)?'], // level 3
+  ['\\w*p(\\wte?|\\s)(two)?','.*p.t(wo|e)?'], // level 3
   ['\\w*ap[^p].*(h|y|m)$'], // level 4
   ['(r|b)?aff?g.?k\\w*']];
   var solutionContainer = gID('solutions');
